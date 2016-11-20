@@ -1,29 +1,31 @@
 <!doctype html>
 <html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/normalize.min.css">
+		<link rel="stylesheet" href="css/main.css">
 
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-    </head>
-    <body>
-    <canvas id="c"></canvas>
-    <img class="servise" src="img/plane.png" id="plane">
-    <img class="servise" src="img/grass.jpg" id="grass">
+		<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+	</head>
+	<body>
+	<canvas id="c"></canvas>
+	<img class="servise" src="img/plane.png" id="plane">
+	<img class="servise" src="img/grass.jpg" id="grass">
 
-        <script src="js/vendor/jquery-3.1.1.min.js"></script>
-        <script src="js/vendor/fabric-1.6.6.min.js"></script>
+		<script src="js/vendor/jquery-3.1.1.min.js"></script>
+		<script src="js/vendor/fabric-1.6.6.min.js"></script>
 
-        <script src="js/airrush.js"></script>
-        <script>
-        var game = new Airrush;
-        game.init();
-        </script>
-    </body>
+		<script src="js/airrush.js"></script>
+		<script>
+			$(window).on('load', function() {
+				var game = new Airrush;
+				game.init();
+			});
+		</script>
+	</body>
 </html>

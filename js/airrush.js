@@ -8,28 +8,28 @@ var Airrush = function() {
 	this.verticalAmount = Math.ceil(this.viewportHeigth / this.grassImgHeight) + 1;
 
 	this.stateOfSwing = 0;
-		this.planeStates = [
-			[ 1, 0, 0, 1, 0, 0 ],
-			[ 0.99, 0.01, 0, 1, 0, 0 ],
-			[ 0.98, 0.02, 0, 1, 1, 0 ],
-			[ 0.97, 0.03, 0, 1, 3, 0 ],
-			[ 0.96, 0.04, 0, 1, 6, 0 ],
-			[ 0.95, 0.05, 0, 1, 10, 0 ],
-			[ 0.96, 0.04, 0, 1, 15, 0 ],
-			[ 0.97, 0.03, 0, 1, 18, 0 ],
-			[ 0.98, 0.02, 0, 1, 20, 0 ],
-			[ 0.99, 0.01, 0, 1, 21, 0 ],
-			[ 1, 0, 0, 1, 22, 0 ],
-			[ 0.99, -0.01, 0, 1, 22, 0 ],
-			[ 0.98, -0.02, 0, 1, 21, 0 ],
-			[ 0.97, -0.03, 0, 1, 18, 0 ],
-			[ 0.96, -0.04, 0, 1, 15, 0 ],
-			[ 0.95, -0.05, 0, 1, 10, 0 ],
-			[ 0.96, -0.04, 0, 1, 6, 0 ],
-			[ 0.97, -0.03, 0, 1, 3, 0 ],
-			[ 0.98, -0.02, 0, 1, 1, 0 ],
-			[ 0.99, -0.01, 0, 1, 0, 0 ],
-		];
+	this.planeStates = [
+		[ 1, 0, 0, 1, 0, 0 ],
+		[ 0.99, 0.01, 0, 1, 0, 0 ],
+		[ 0.98, 0.02, 0, 1, 1, 0 ],
+		[ 0.97, 0.03, 0, 1, 3, 0 ],
+		[ 0.96, 0.04, 0, 1, 6, 0 ],
+		[ 0.95, 0.05, 0, 1, 10, 0 ],
+		[ 0.96, 0.04, 0, 1, 15, 0 ],
+		[ 0.97, 0.03, 0, 1, 18, 0 ],
+		[ 0.98, 0.02, 0, 1, 20, 0 ],
+		[ 0.99, 0.01, 0, 1, 21, 0 ],
+		[ 1, 0, 0, 1, 22, 0 ],
+		[ 0.99, -0.01, 0, 1, 22, 0 ],
+		[ 0.98, -0.02, 0, 1, 21, 0 ],
+		[ 0.97, -0.03, 0, 1, 18, 0 ],
+		[ 0.96, -0.04, 0, 1, 15, 0 ],
+		[ 0.95, -0.05, 0, 1, 10, 0 ],
+		[ 0.96, -0.04, 0, 1, 6, 0 ],
+		[ 0.97, -0.03, 0, 1, 3, 0 ],
+		[ 0.98, -0.02, 0, 1, 1, 0 ],
+		[ 0.99, -0.01, 0, 1, 0, 0 ],
+	];
 
 };
 
@@ -66,12 +66,13 @@ Airrush.prototype.addGrass = function() {
 Airrush.prototype.addPlane = function() {
 	var plane = document.getElementById('plane');
 
+	var planeStatesAverangeOffset = this.planeStates[this.planeStates.length / 2][4] / 2;
+
 	var planeProperies = {};
 		planeProperies.width = 100,
 		planeProperies.height = planeProperies.width * 0.8, //image proporions, see doc.txt
 		planeProperies.top = this.viewportHeigth - planeProperies.height - 20,
-		planeProperies.left = this.viewportWidth / 2 - planeProperies.width//100 is a width
-		//planeProperies.transformMatrix = [1,.30,0,1,0,0];
+		planeProperies.left = this.viewportWidth / 2 - planeProperies.width / 2 - planeStatesAverangeOffset
 
 	this.planeInstance = new fabric.Image(plane, planeProperies);
 	this.canvas.add(this.planeInstance);
