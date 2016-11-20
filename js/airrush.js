@@ -101,7 +101,6 @@ Airrush.prototype.animation = function() {
 	};
 
 	movingObjects.planeSwing = function() {
-		console.log(self.planeSwingDivider);
 		if (typeof self.planeSwingDivider == "undefined") {
 			self.planeSwingDivider = 5
 		} else {
