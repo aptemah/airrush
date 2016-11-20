@@ -1,1 +1,6 @@
-css cleared and service images were hidden
+image of grass dimensions WxH: 299x168 px
+plane image dimensions WxH: 473x380
+plane image proportions H/W: appox. 0.8 
+
+TODO
+move all animating objects into the special object for automatic launch
