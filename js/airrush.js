@@ -70,7 +70,7 @@ Airrush.prototype.addPlane = function() {
 
 	var planeProperies = {};
 		planeProperies.width = 100,
-		planeProperies.height = planeProperies.width * 0.8, //image proporions, see doc.txt
+		planeProperies.height = planeProperies.width, //images should be square
 		planeProperies.top = this.viewportHeigth - planeProperies.height - 20,
 		planeProperies.left = this.viewportWidth / 2 - planeProperies.width / 2 - planeStatesAverangeOffset
 

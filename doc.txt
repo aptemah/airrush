@@ -3,4 +3,9 @@ plane image dimensions WxH: 473x380
 plane image proportions H/W: appox. 0.8 
 
 TODO
-move all animating objects into the special object for automatic launch
+make image 1x1
+make "danger zone"
+make enemies
+make enemies danger zones
+make missels
+make interaction with plane and missels/enemies and enemise, my missels
