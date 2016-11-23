@@ -3,9 +3,10 @@ plane image dimensions WxH: 473x380
 plane image proportions H/W: appox. 0.8 
 
 TODO
-make image 1x1
-make "danger zone"
-make enemies
+в функции тест сделать проверку на наличие врагов
+появление вертолетов сделать рандомным по горизонтали
+сделать движение вертолетов снизу вверх и по горизонтали(записывать эти возможности в объект уровня)
+сделать функцию-сравниватель в анимационной зоне. Она будет сравнивать опасную зону самолетика и опасные зоны врагов, которые будут храниться в специальном массиве(запихнуть всех врагов в этот массив), чтобы было легче их перебирать. 
 make enemies danger zones
 make missels
 make interaction with plane and missels/enemies and enemise, my missels
