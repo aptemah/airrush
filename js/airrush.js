@@ -52,6 +52,7 @@ Airrush.prototype.init = function() {
 
 	this.addGrass();
 	this.addPlane();
+	this.addShots();
 	this.animation();
 	this.levelBuild();
 };
@@ -83,6 +84,37 @@ Airrush.prototype.addGrass = function() {
 			this.canvas.add(this.grassObject[i][j]);
 		}
 	}
+};
+
+Airrush.prototype.addShots = function() {
+	var self = this;
+	this.shots = [];
+	var i = 0,
+			left = true;
+
+	var intervalID = setInterval(function(){
+
+		if (i < 10) {
+			self.shots[i] = new fabric.Rect({
+				width: 3,
+				height: 5,
+				fill: '#ffffff',
+				top: self.planeInstance.top,
+				left: left ? self.planeInstance.left : self.planeInstance.left + self.planeInstance.width
+			});
+			self.canvas.add(self.shots[i]);
+			i++, left = !left
+		} else {
+			var lastShot = self.shots[0];
+			self.shots.splice(0, 1);
+			self.shots.push(lastShot);
+			self.shots[0].top = self.planeInstance.top;
+			self.shots[0].left = left ? self.planeInstance.left : self.planeInstance.left + self.planeInstance.width;
+			left = !left;
+		}
+
+	},500);
+
 };
 
 Airrush.prototype.addPlane = function() {
@@ -157,6 +189,14 @@ Airrush.prototype.animation = function() {
 			}
 		}
 	};
+
+	movingObjects.shotsMoving = function(){
+		//if (self.shots[0] )
+		self.shots.forEach(function(item){
+			item.top-=3;
+		})
+	};
+
 	movingObjects.test = function() {
 		//self.dangerZone.heli = [
 		//	self.heliInstance.left,
